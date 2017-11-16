@@ -6,6 +6,7 @@ redirect to('/crm')
 end
 
 get '/crm' do
+  @contacts = Contact.all
   erb :index
 end
 

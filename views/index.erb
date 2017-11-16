@@ -1,10 +1,15 @@
-<?DOCTYPE html>
-<html>
-  <head>
-    <title>MY CRM</title>
-  </head>
 
   <body>
-    <h1>Welcome to COCO's CRM</h1>
+
+
+
+      <main>
+        <p>There are <%= Contact.all.length%> contacts</p>
+
+        <% @contacts.each do |contact| %>
+          <div>  <b><%= contact.full_name %></b> (<%= contact.email %>)</br>
+            <a href='#'>Edit</a> | <a href='#'>Delete</a>
+          </div></br>
+        <% end %>
+      </main>
   </body>
-</html>
