@@ -1,0 +1,17 @@
+<?DOCTYPE html>
+<html>
+  <head>
+    <title>MY CRM</title>
+  </head>
+
+  <body>
+    <h1>Contact</h1>
+    <table>
+      <% @contacts.each do |contact| %>
+        <li> Name: <%= contact.full_name %> </li>
+        <li> Email: <%= contact.email %> </li>
+        <li> Note: <%= contact.note %> </li></br>
+      <% end %>
+    </table>
+
+<a href='/'>Home</a>

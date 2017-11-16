@@ -1,9 +1,23 @@
 require_relative 'contact'
 require 'sinatra'
 
-
+get '/'do
+redirect to('/crm')
+end
 
 get '/crm' do
-  # instructions for what to do when user visits '/home' will go here
   erb :index
+end
+
+get '/contact' do
+  @contacts = Contact.all
+  erb :contacts
+end
+
+get '/about' do
+  erb :about
+end
+
+after do
+  ActiveRecord::Base.connection.close
 end
